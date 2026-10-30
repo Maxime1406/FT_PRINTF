@@ -6,7 +6,7 @@
 /*   By: mbardeau <mbardeau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 14:49:33 by mbardeau          #+#    #+#             */
-/*   Updated: 2026/10/29 16:13:27 by mbardeau         ###   ########.fr       */
+/*   Updated: 2026/10/30 16:26:33 by mbardeau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_print_char(va_list args)
 {
-	int	result;
+	char	c;
 
-	result = va_arg(args, int);
-	if (!result)
-		return (-1);
-	ft_putchar(result);
-	return (0);
+	c = (char)va_arg(args, int);
+	ft_putchar(c);
+	return (1);
 }
