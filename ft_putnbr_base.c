@@ -12,7 +12,25 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr_base(unsigned long nbr, const char *base)
+int	ft_putnbr_base(unsigned long long n, char *base)
 {
-	return (0);
+	int					count;
+	char				c;
+	unsigned long long	base_len;
+
+	if (!base || base[0] == '\0')
+		return (0);
+	base_len = ft_strlen(base);
+	count = 0;
+	if (n >= base_len)
+	{
+		count += ft_putnbr_base(n / base_len, base);
+		count += ft_putnbr_base(n % base_len, base);
+	}
+	else
+	{
+		c = base[n];
+		count += write(1, &c, 1);
+	}
+	return (count);
 }

@@ -2,14 +2,13 @@ NAME = libftprintf.a
 
 SRCS = ft_print_char.c \
 	ft_print_hex_lower.c \
-	ft_printf_hex_upper.c \
+	ft_print_hex_upper.c \
 	ft_print_nbr.c \
 	ft_print_percent.c \
 	ft_print_ptr.c \
 	ft_print_str.c \
 	ft_print_unsigned.c \
 	ft_printf.c \
-	ft_putchar.c \
 	ft_putnbr_base.c \
 	ft_putstr.c \
 	ft_strlen.c 
@@ -17,7 +16,7 @@ SRCS = ft_print_char.c \
 OBJS = $(SRCS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 

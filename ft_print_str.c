@@ -11,13 +11,17 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_print_str(va_list args)
 {
 	char	*str;
 
 	str = va_arg(args, char *);
+	if (!str)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	ft_putstr(str);
 	return (ft_strlen(str));
 }

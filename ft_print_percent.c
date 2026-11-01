@@ -12,7 +12,8 @@
 
 #include "ft_printf.h"
 
-int	ft_print_percent(va_list args)
+int	ft_print_percent(void)
 {
-	return (0);
+	write(1, "%", 1);
+	return (1);
 }

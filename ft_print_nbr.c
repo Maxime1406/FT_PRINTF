@@ -14,5 +14,16 @@
 
 int	ft_print_nbr(va_list args)
 {
-	return (0);
+	long long	n;
+	int			count;
+
+	n = va_arg(args, int);
+	count = 0;
+	if (n < 0)
+	{
+		count += write(1, "-", 1);
+		n = -n;
+	}
+	count += ft_putnbr_base((unsigned long long)n, "0123456789");
+	return (count);
 }

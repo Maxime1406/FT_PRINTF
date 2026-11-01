@@ -21,7 +21,7 @@ static int	ft_check_format(char format, va_list args)
 		count += ft_print_char(args);
 	else if (format == 's')
 		count += ft_print_str(args);
-	/*else if (format == 'p')
+	else if (format == 'p')
 		count += ft_print_ptr(args);
 	else if (format == 'd' || format == 'i')
 		count += ft_print_nbr(args);
@@ -32,7 +32,7 @@ static int	ft_check_format(char format, va_list args)
 	else if (format == 'X')
 		count += ft_print_hex_upper(args);
 	else if (format == '%')
-		count += ft_print_percent(args);*/
+		count += ft_print_percent();
 	return (count);
 }
 
@@ -49,14 +49,14 @@ int	ft_printf(const char *format, ...)
 	count = 0;
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
 			count += ft_check_format(format[i + 1], args);
 			i++;
 		}
 		else
 		{
-			ft_putchar(format[i]);
+			write(1, &format[i], 1);
 			count++;
 		}
 		i++;

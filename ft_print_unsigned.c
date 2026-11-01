@@ -14,5 +14,10 @@
 
 int	ft_print_unsigned(va_list args)
 {
-	return (0);
+	unsigned int	n;
+	int				count;
+
+	n = va_arg(args, unsigned int);
+	count = ft_putnbr_base(n, "0123456789");
+	return (count);
 }
